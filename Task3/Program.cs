@@ -2,36 +2,38 @@
 //начиная с конца. Использовать рекурсию, не использовать циклы.
 
 
-void RevertArray(int m, int n)
+int[] Array = {1,2,3,4,5};
+int size = 5;
+
+void RevertArray(int[] Array, int size)
+
 {
-      if(m > n) 
-      return;
-      RevertArray(m + 1, n);
-      Console.Write(m + " ");
+      if (size == 0) 
+      return; 
+      Console.Write(Array[size-1] + " ");           
+      RevertArray(Array, size - 1);     
 }
 
-int m = 5, n = 10;
-RevertArray(m, n);
+RevertArray(Array,size);
 
 
 /*
-int ReadInt(string str)
+int[] Array = {1,2,3,4,5};
+int size = Array.Length;
+
+void RevertArray(int[] Array, int size = 4)
+
 {
-      Console.Write(str);
-      return Convert.ToInt32(Console.ReadLine());
-}
-void RevertArray(int m, int n)
-{
-      if(m > n)
-      {
-      Console.WriteLine("Wrong itput");
+      if (size < 0) 
+      return; 
+              
+      RevertArray(Array, size - 1);
+            
+      if (size > 4)
       return;
-      }
-      RevertArray(m + 1, n);
-      Console.Write(m + " ");
+
+      Console.Write(Array[size] + " ");    
 }
 
-int m = ReadInt("Enter integer m: ");
-int n = ReadInt("Enter integer n: ");
-RevertArray(m, n);
+RevertArray(Array,size);
 */
